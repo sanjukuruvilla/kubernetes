@@ -1,0 +1,15 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: test-cluster
+  region: us-east-2  # Replace with your desired AWS region
+
+nodeGroups:
+  - name: ng-1
+    instanceType: t2.medium
+    desiredCapacity: 2
+    maxSize: 3
+    minSize: 1
+    ssh: 
+      publicKeyName: k8s
